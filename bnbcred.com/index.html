@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BNBcred - Decentralized Binance Plateform</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/45388cb37b.js"></script>
+    <link rel="stylesheet" href="css/stylec4ca.css?1" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="https://andrewjtait.github.io/flipTimer/css/flipTimer.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Neohellenic:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="dev_version">Currently is on Test Network and for testing purpose only. Please switch to the Main Network.
+    </div>
+    <section class="top-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav>
+
+                        <div class="header-block">
+                            <a href="index.html">
+                        <img class="logo-block_logo" src="img/logo-big.png" alt="">
+                     </a>
+                            <div class="links-block">
+                                <!-- <ul>
+                                    <li><span><img style="width:24px;margin:4px;" src="img/flags/united-kingdom.png" /></span></li>
+                                 </ul>
+                                 <ul class="social-links">
+                                    <li><span><i class="fa fa-telegram" aria-hidden="true"></i></span><a href="https://t.me/BNBcredß BNB_official" target="_blank" style="color:white">@BNBcredß BNBGroup</a></li>
+                                    <li><span><i class="fa fa-twitter" aria-hidden="true"></i></span><a href="https://twitter.com/BNBcredß BNBAPP" target="_blank" style="color:white">@BNBcredß BNBAPP</a></li>
+                                    </li>
+                                 </ul> -->
+                                <!-- <div id="translate" class="mt-2">
+                                 <div id="ytWidget"></div>
+                              </div> -->
+                                <button onClick="refresh_page(this.value)" value="1" id="con_wallet" class="link-tg link-tg--warm my-4 px-3">
+                                 Connect Wallet
+                              </button>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="row countdown-wrap" style="display:none; color: red;">
+                <p>Start Investing in</p>
+                <div><span id="days">0</span>Days <em>/</em> <span id="hours">0</span>Hours <em>/</em> <span id="minutes">0</span>Minutes <em>/</em> <span id="seconds">0</span>Seconds</div>
+            </div>
+            <div class="main-block">
+                <div class="parallax-tron">
+                    <img src="img/tron-1.png" />
+                    <img src="img/tron-2.png" />
+                    <img src="img/tron-3.png" />
+                    <img src="img/tron-4.png" />
+                    <img src="img/tron-5.png" />
+                    <img src="img/tron-6.png" />
+                    <img src="img/tron-7.png" />
+                </div>
+                <!-- <div class="col-12 col-lg-6"> -->
+                <!-- <div class="header">Get up to<span>+300<span>%</span></span> of your deposits</div>
+                  <div class="description">We offer bonuses for the total number of active investors on the smart contract and a personal retention bonus with a growing percentage depending on the base income. Maximum possible yield: + 300% for each deposit By placing your funds into our smart contract, you will 3X your income.</div>
+                  <div class="referal-descr">
+                     <p>Personal Hold-Bonus : 0.05% per day when you hold and don’t withdraw. Limited to <span>5<span>%</span></span></p>
+                     <ul>
+                        <li><b>Point 1 :</b> Withdraw dividends, It resets and starts again</li>
+                        <li><b>Point 2 : </b>If you reached 300% but did not withdraw , It works as reseted for new deposit.</li>
+                        <li><b>Point 3 : </b>If you have multiple deposits , you will have same bonus for all deposit.</li>
+                     </ul>
+                     <p>NEW USER-BONUS : 0.1% PER 100 INVESTORS WHO JOINED PLATFORM AFTER YOU DEPOSITED. LIMITED TO <span>10<span>%</span></span></p>
+                     <ul>
+                        <li><b>Point 1 : </b>When you withdraw before 300% , there will be no new user bonus. But if you withdraw after reaching 300% , it only resets and starts again for your next deposits. </li>
+                        <li><b>Point 2 : </b>If you reached 300% and do not withdraw, it works as un-reseted for a new deposit. </li>
+                        <li><b>Point 3 : </b>If you have multiple deposits , you will have same bonus for all deposit.</li>
+                     </ul>
+                  </div> -->
+                <div class="row align-items-center">
+                    <div class="col-12 col-lg-6">
+                        <div class="row button-line">
+                            <div class="col-12 col-lg-6 col-md-6">
+                                <a href="https://t.me/bnbcredglobal" target="_blank">
+                           <button class="link-tg link-tg--warm my-4">TELEGRAM GROUP</button>
+                        </a>
+                            </div>
+                            <div class="col-12 col-lg-6 col-md-6">
+                                <a href="HazeSecurity_BNBcred.pdf" target="_blank">
+                           <button class="link-tg link-tg--pink my-4">AUDIT OVERVIEW</button>
+                        </a>
+                            </div>
+                            <div class="col-12 col-lg-6 col-md-6">
+                                <a href="javascript:void(0)">
+                           <button class="link-tg link-tg--pink my-4">STAKED BNB - <span id="total_staked">
+                                 0</span></button>
+                        </a>
+                            </div>
+                            <div class="col-12 col-lg-6 col-md-6">
+                                <a href="https://bscscan.com/address/0xa80fce0fd6d67f27dd669ca7a7f857592d338c8f#code" target="_blank">
+                           <button class="link-tg link-tg--cold my-4">CONTRACT CODE</button>
+                        </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="smart-c-block">
+                            <div class="circle-bg">
+                                <img src="img/circle.png">
+                            </div>
+                            <div class="info-block" id="dep-block">
+                                <div class="percents">20%</div>
+                                <div class="description">Daily</div>
+                                <!-- <div class="adress">Your upline:<br>
+                           <span id="upline-address">...</span>
+                        </div> -->
+                                <div class="input-group trx-group transp-back">
+                                    <input type="text" class="form-control" id="invest-input1" placeholder="Enter the amount">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text trx-val">BNB</span>
+                                    </div>
+                                </div>
+                                <div class="transp-back">
+                                    <input type="button" onclick="invest(0,document.getElementById('invest-input1').value)" class="purple-btn" id="invest-button" value="INVEST NOW" />
+                                </div>
+                                <div class="description">14 Days</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="withdrawable">
+        <div class="container">
+            <!-- <div class="row justify-content-center">
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+               <div class="info-block violet-bg stats-block">
+                  
+                  
+                  <div class="stats-button copy">
+                     <input id="ref-link" value="" style="display: none" />
+                     <a class="green-btn" onclick="copyToClipboard('#ref-link')">COPY MY REFERRAL LINK</a>
+                  </div>
+               </div>
+            </div>
+            
+         </div>  -->
+
+            <div class="row">
+                <div class="col-lg-9 col-md-8">
+                    <h2 class="neon-text mb-4" data-text="withdrawable">withdrawable</h2>
+
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="withdrawable__row-1">
+                        <div class="uni-cart uni-cart--yellow">
+                            <div class="uni-cart__title neon-text" data-text="Withdraw &amp; Reinvest">
+                                Withdraw &amp; Reinvest
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="withdrawable__row-1">
+                        <div class="uni-cart uni-cart--yellow copy">
+                            <input id="ref-link" value="" style="display: none" />
+                            <a style="color:#f7b688" class="green-btn uni-cart__title neon-text" onclick="copyToClipboard('#ref-link')">COPY MY REFERRAL LINK</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="quantity mb-5">
+                        <div class="quantity__type uni-neon-text--yellow" data-text="bnb">bnb</div>
+                        <div class="quantity__amount uni-neon-text--blue" id="user-available" data-text="0">0</div>
+                        <!-- <div class="quantity__dollars">
+                     <span class="uni-neon-text--red" data-text="$">$</span>
+                     <span class="uni-neon-text--red" data-text="0">0</span>
+                  </div> -->
+                    </div>
+
+                    <div class="d-flex row-btns">
+                        <button class="uni-cart uni-cart--green">
+                     <div class="uni-cart__title uni-neon-text--green" id="wdbtn" data-text="Withdraw">Withdraw </div>
+                  </button>
+                        <button class="uni-cart uni-cart--blue mr-0">
+                     <div class="uni-cart__title uni-neon-text--blue" id="ribtn" data-text="Reinvest">Reinvest </div>
+                  </button>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row wrap-carts">
+                        <div class="col-lg-6">
+                            <div class="uni-cart uni-cart--blue">
+                                <div class="uni-cart__icon">
+                                    <img class="blur-icon" src="img/house.svg" alt="" loading="lazy">
+                                    <img class="icon" src="img/house.svg" alt="" loading="lazy">
+                                </div>
+                                <div class="uni-cart__title neon-text" data-text="tOTAL iNVESTED">TOTAL INVESTED</div>
+                                <div class="uni-cart__number uni-neon-text--blue" id="total_invested" data-text="0">0</div>
+                                <div class="uni-cart__subtitle neon-text" data-text="bnb">bnb</div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="uni-cart uni-cart--pink">
+                                <div class="uni-cart__icon">
+                                    <img class="blur-icon" src="img/human.svg" alt="" loading="lazy">
+                                    <img class="icon" src="img/human.svg" alt="" loading="lazy">
+                                </div>
+                                <div class="uni-cart__title neon-text" data-text="ACTIVE INVESTMENT">Total Referral</div>
+                                <div class="uni-cart__number uni-neon-text--pink" id="referral_total_bonus" data-text="0">0
+                                </div>
+                                <div class="uni-cart__subtitle neon-text" data-text="bnb">bnb</div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="uni-cart uni-cart--yellow">
+                                <div class="uni-cart__icon">
+                                    <img class="blur-icon" src="img/unload.svg" alt="" loading="lazy">
+                                    <img class="icon" src="img/unload.svg" alt="" loading="lazy">
+                                </div>
+                                <div class="uni-cart__title neon-text" data-text="Total Withdrawals">Referral Withdrawals</div>
+                                <div class="uni-cart__number uni-neon-text--yellow" id="referral_withdrawn" data-text="0">0
+                                </div>
+                                <div class="uni-cart__subtitle neon-text" data-text="bnb">bnb</div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="uni-cart uni-cart--green">
+                                <div class="uni-cart__icon">
+                                    <img class="blur-icon" src="img/three-way.svg" alt="" loading="lazy">
+                                    <img class="icon" src="img/three-way.svg" alt="" loading="lazy">
+                                </div>
+                                <div class="uni-cart__title neon-text" data-text="tOTAL REiNVESTED">Referral Avaliable</div>
+                                <div class="uni-cart__number uni-neon-text--green" id="referral_avaliable" data-text="0">0</div>
+                                <div class="uni-cart__subtitle neon-text" data-text="bnb">bnb</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="daily-profit">
+        <div class="container">
+
+
+            <div class="row">
+
+                <div class="col-12 col-md-4">
+                    <div class="plan-box1 text-center">
+                        <div class="plan-box-name1">Plan 2</div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Daily Profit</p>
+                                <h2 id="contractPercent1">...%</h2>
+                            </div>
+                            <div class="col">
+                                <p>Total Return</p>
+                                <h2 id="contractPercent1Return">...%</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Withdraw time</p>
+                                <h3>End of Plan</h3>
+                            </div>
+                            <div class="col">
+                                <p>Days</p>
+                                <h2>7</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Enter Amount</p><input onkeyup="get_profit(this.value,1)" placeholder="10" type="text" id="plan2amount" class="btn-secondary form-control form-control-lg">
+                            </div>
+                            <div class="col">
+                                <p>In 7 days you will get</p>
+                                <h4 id="plan1profit">...</h4>
+                            </div>
+                        </div><button onclick="invest(1,document.getElementById('plan2amount').value)" type="button" class="mt-2 btn btn-success btn-block btn-lg">STAKE BNB</button><i class="small">* plan use capitalization of interest</i>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="plan-box1 text-center">
+                        <div class="plan-box-name1">Plan 3</div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Daily Profit</p>
+                                <h2 id="contractPercent2">...%</h2>
+                            </div>
+                            <div class="col">
+                                <p>Total Return</p>
+                                <h2 id="contractPercent2Return">...%</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Withdraw time</p>
+                                <h3>End of Plan</h3>
+                            </div>
+                            <div class="col">
+                                <p>Days</p>
+                                <h2>14</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Enter Amount</p><input onkeyup="get_profit(this.value,2)" placeholder="10" type="text" id="plan3amount" class="btn-secondary form-control form-control-lg">
+                            </div>
+                            <div class="col">
+                                <p>In 14 days you will get</p>
+                                <h4 id="plan2profit">...</h4>
+                            </div>
+                        </div><button type="button" onclick="invest(2,document.getElementById('plan3amount').value)" class="mt-2 btn btn-success btn-block btn-lg">STAKE BNB</button><i class="small">* plan use capitalization of interest</i>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="plan-box1 text-center">
+                        <div class="plan-box-name1">Plan 4</div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Daily Profit</p>
+                                <h2 id="contractPercent3">...%</h2>
+                            </div>
+                            <div class="col">
+                                <p>Total Return</p>
+                                <h2 id="contractPercent3Return">...%</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Withdraw time</p>
+                                <h3>End of Plan</h3>
+                            </div>
+                            <div class="col">
+                                <p>Days</p>
+                                <h2>21</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Enter Amount</p><input onkeyup="get_profit(this.value,3)" placeholder="10" type="text" id="plan4amount" class="btn-secondary form-control form-control-lg">
+                            </div>
+                            <div class="col">
+                                <p>In 21 days you will get</p>
+                                <h4 id="plan3profit">...</h4>
+                            </div>
+                        </div><button onclick="invest(3,document.getElementById('plan4amount').value)" type="button" class="mt-2 btn btn-success btn-block btn-lg">STAKE BNB</button><i class="small">* plan use capitalization of interest</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="my-stake">
+        <div class="container">
+            <h1>My Stake</h1>
+            <div id="mystake_row" class="row">
+
+                <!-- <div class="col-md-4">
+               <div class="stakeDiv">
+                  <div class="d-flex align-items-start justify-content-between">
+                     <div class="mb-3">
+                        <h5>Plan4</h5>
+                        <p>8.8%</p>
+                     </div>
+                     <h5 class="mb-3">ative</h5>
+                     <div class="mb-3">
+                        <p>30 Mar <i class="fa fa-arrow-right pl-1"></i>
+                        </p>
+                        <p class="text-right">13 Apr</p>
+                     </div>
+                  </div>
+                  <div class="d-flex align-items-start justify-content-between">
+                     <div class="mb-2">
+                        <h2>0.075</h2>
+                        <h4>BNB</h4>
+                     </div>
+                     <div class="mb-2">
+                        <h2>0.169</h2>
+                        <h4 class="text-right">BNB</h4>
+                     </div>
+                  </div>
+                  <div class="progress">
+                     <span style="width: 25%">25%</span>
+                  </div>
+               </div>
+            </div> -->
+
+                <!-- <div class="col-md-4">
+               <div class="stakeDiv">
+                  <div class="d-flex align-items-start justify-content-between">
+                     <div class="mb-3">
+                        <h5>Plan4</h5>
+                        <p>8.9%</p>
+                     </div>
+                     <h5 class="mb-3">ative</h5>
+                     <div class="mb-3">
+                        <p>30 Mar <i class="fa fa-arrow-right pl-1"></i>
+                        </p>
+                        <p class="text-right">13 Apr</p>
+                     </div>
+                  </div>
+                  <div class="d-flex align-items-start justify-content-between">
+                     <div class="mb-2">
+                        <h2>0.250</h2>
+                        <h4>BNB</h4>
+                     </div>
+                     <div class="mb-2">
+                        <h2>0.575</h2>
+                        <h4 class="text-right">BNB</h4>
+                     </div>
+                  </div>
+                  <div class="progress">
+                     <span style="width: 21%">21%</span>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-md-4">
+               <div class="stakeDiv">
+                  <div class="d-flex align-items-start justify-content-between">
+                     <div class="mb-3">
+                        <h5>Plan4</h5>
+                        <p>10.2%</p>
+                     </div>
+                     <h5 class="mb-3">ative</h5>
+                     <div class="mb-3">
+                        <p>30 Mar <i class="fa fa-arrow-right pl-1"></i>
+                        </p>
+                        <p class="text-right">13 Apr</p>
+                     </div>
+                  </div>
+                  <div class="d-flex align-items-start justify-content-between">
+                     <div class="mb-2">
+                        <h2>24.500</h2>
+                        <h4>BNB</h4>
+                     </div>
+                     <div class="mb-2">
+                        <h2>70.935</h2>
+                        <h4 class="text-right">BNB</h4>
+                     </div>
+                  </div>
+                  <div class="progress">
+                     <span style="width: 13%">13%</span>
+                  </div>
+               </div>
+            </div> -->
+
+            </div>
+        </div>
+    </section>
+
+    <section class="referals">
+        <div class="container">
+            <div class="row" style="margin-bottom: 10px;">
+                <div class="col-12 title-block white-text text-center">Referral program</div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-4 ref-percent my-4">
+                    <!-- <img src="img/referal.png" alt="" class="img-fluid"> -->
+                    <span id="p1">Level 1<span>(7%)</span></span>
+                    <span id="p2">Level 2<span>(3%)</span></span>
+                    <span id="p3">Level 3<span>(2%)</span></span>
+                </div>
+                <div class="col-12 col-lg-4 my-4">
+                    <p>Our company BNBcred is open to all comers, and we really appreciate the desire of our participants to spread the ideology of our society among our friends, colleagues, acquaintances. BNBcred we encourage the involvement of additional
+                        participants in our project. Attracting new participants to our society, you have a significant impact both on your own well-being and on the well-being of society as a whole.
+                    </p>
+                </div>
+                <div class="col-12 col-lg-4 my-4">
+                    <table class="invert">
+                        <thead>
+                            <tr>
+                                <th colspan="3" class="text-center">You received referral (<span id="total-refbonus">...</span> BNB)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Level 1</td>
+                                <td>7%</td>
+                                <td id="ref_1">...</td>
+                            </tr>
+                            <tr>
+                                <td>Level 2</td>
+                                <td>3%</td>
+                                <td id="ref_2">...</td>
+                            </tr>
+                            <tr>
+                                <td>Level 3</td>
+                                <td>2%</td>
+                                <td id="ref_3">...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="advantages">
+        <div class="container" style="height: 100%">
+            <div class="row wraper py-3">
+                <img src="img/advantages.png" alt="">
+                <div class="col-12 col-md-6 mb-4 advantage-item">
+                    <div>Accessible entrance</div>
+                    Deposit any amount of BNB to the smart contract and start making profits. The minimum deposit amount is 0.05 BNB. There is no maximum limit.
+                </div>
+                <div class="col-12 col-md-6 mb-4 advantage-item">
+                    <div>Luck</div>
+                    If you do not invest by upline's referral link, platform selects an upline randomly. First it selects from ppl who did not have downline and then it be selected from ppl who have less direct referral.
+                </div>
+                <div class="col-12 col-md-6 mb-4 advantage-item">
+                    <div>Auto-referral payout</div>
+                    Commissions are withdrawn automatically by platform and it transfers directly on your personal wallet when invested. Therefore there is no withdrawal referral bonus button.
+                </div>
+                <div class="col-12 col-md-6 mb-4 advantage-item">
+                    <div>Get BNB</div>
+                    We recommend using: Metamask / Binance Chain Wallet browser extensions, or <a href="https://trustwallet.com/" target="_blank">Trust Wallet</a> mobile applications. You can exchange BNB coins at all popular exchangers.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="offer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="header">Get up to <span>20% to 30 <span>%</span></span>per day according to your tarrif</div>
+                    <div class="description">We offer bonuses for the total number of active investors on the smart contract and a personal retention bonus with a growing percentage depending on the base income.In a Non staking based plan you can earn 20 % per day and can withdraw
+                        any time</div>
+                    <div class="referal-descr">
+                        <p>Personal Hold-Bonus : 1% per day when you hold and don’t withdraw.
+                        </p>
+                        <ul>
+                            <li><b>Point 1 :</b> Withdraw dividends, It resets and starts again</li>
+
+                            <li><b>Point 2 : </b>Holding bonus will not work for Staking Plan</li>
+                        </ul>
+                        <p>Reinvestment : If you go with the Reinvestment Action, your referral bonus and dividends from plan 1 get reinvest
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <section class="calculator">
+      <div class="container">
+         <div class="row d-flex flex-wrap-reverse flex-xl-nowrap">
+            <div class="col-12 col-md-4">
+               <div class="d-flex flex-column align-items-center info-block calculator">
+                  <div class="head">
+                     <div>Profit <br /> calculator</div>
+                  </div>
+                  <h1>deposit amount</h1>
+                  <div class="input-group trx-group transp-back">
+                     <input type="text" class="form-control" value="1" id="calculate-input" placeholder="amount">
+                     <div class="input-group-append">
+                        <span class="input-group-text trx-val">BNB</span>
+                     </div>
+                  </div>
+                  <h1>hold-days</h1>
+                  <div class="input-group trx-group transp-back">
+                     <input type="text" class="form-control" value="40" id="calculate-days-input"
+                        placeholder="hold days">
+                     <div class="input-group-append">
+                        <span class="input-group-text trx-val">DAYS</span>
+                     </div>
+                  </div>
+                  <h1>Investors</h1>
+                  <div class="input-group trx-group transp-back">
+                     <input type="text" class="form-control" value="0" id="calculate-users-input"
+                        placeholder="investors">
+                     <div class="input-group-append">
+                        <span class="input-group-text trx-val">USERS</span>
+                     </div>
+                  </div>
+                  <div class="row calc-res" style="width: 100%;">
+                     <div class="col-6 item">
+                        <span>Deposit amount:</span>
+                        <div><b id="invest-amount">1</b><span> BNB</span></div>
+                     </div>
+                     <div class="col-6 item">
+                        <span>Daily Profit:</span>
+                        <div><b id="daily-profit">0.05</b> <span> BNB</span></div>
+                     </div>
+                  </div>
+                  <div class="calc-amount" id="total-profit">2 <span>BNB</span></div>
+                  <div class="purple-text">Maximum profit is 300%</div>
+               </div>
+            </div>
+            <div class="col-12 col-md-8">
+               <div class="title-block">Verified by HazeSecurity</div>
+               <div class="subtitle-block">Independent audits and smart-contract reviews</div>
+               <div class="calculator-text">
+                  Our platform is 100% dedicated to serving investors. Our smart contract is built after careful study
+                  of the pitfalls faced by other smart contracts to ensure the longevity of our platform. As a user, you
+                  don't have to worry about whale infiltration destroying your earning opportunities for new users.
+                  BNBcred is a platform created for everyone to earn money.
+               </div>
+               <div class="row card-block">
+                  <div class="col-12 col-lg-8 card">
+                     <div class="d-flex justify-content-between info">
+                        <div class="d-flex flex-column">
+                           <div>Independent company:</div>
+                           <b>HazeSecurity</b>
+                           <div class="site">(Site: <a href="https://hazecrypto.net/"
+                                 style="color: #212529;">hazecrypto.net)</a></div>
+                        </div>
+                        <img
+                           src="../hazecrypto.net/wp-content/uploads/thegem-logos/logo_726a148fa9d6f9e093eb3d9dd636513d_1x.png"
+                           alt="" style="width: 80px;">
+                     </div>
+                     <div class="d-flex justify-content-between align-items-center status status-success">
+                        <div class="d-flex status-info">
+                           <img src="img/accept.svg" alt="">
+                           <div class="text">Status:<br><span>Successfully</span></div>
+                        </div>
+                        <a href="HazeSecurity_BNBcredß BNB.pdf" target="_blank"
+                           style="text-transform: uppercase;font-weight: 700;">Check</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section> -->
+    <footer>
+        <div class="container">
+            <div class="d-flex flex-column align-items-center">
+                <div class="row">
+                    <div class="col-12 col-lg-4">
+                        <div class="head-partners">Reviews and mentions</div>
+                        <div class="row">
+                            <div class="col-12 col-sm-6 overview-item text-center text-lg-left">
+                                <a href="javascript:void(0)">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="82" height="37" viewBox="0 0 82 37">
+                              <g>
+                                 <g>
+                                    <g>
+                                       <path fill="#85aafd"
+                                          d="M16.758 14.938v11.826H4.932A4.937 4.937 0 0 1 0 21.833v-6.895a4.937 4.937 0 0 1 4.932-4.931h6.894a4.937 4.937 0 0 1 4.932 4.931zM4.932 13.353c-.876 0-1.586.71-1.586 1.585v6.895c0 .875.71 1.585 1.586 1.585h8.48v-8.48c0-.876-.71-1.585-1.586-1.585z" />
+                                    </g>
+                                    <g>
+                                       <path fill="#85aafd"
+                                          d="M38.457 14.938v11.826H26.631a4.937 4.937 0 0 1-4.932-4.931v-6.895a4.937 4.937 0 0 1 4.932-4.931h6.895a4.937 4.937 0 0 1 4.931 4.931zm-11.826-1.585c-.876 0-1.586.71-1.586 1.585v6.895c0 .875.71 1.585 1.586 1.585h8.48v-8.48c0-.876-.71-1.585-1.585-1.585z" />
+                                    </g>
+                                    <g>
+                                       <path fill="#85aafd"
+                                          d="M81.902 14.938v6.895a4.937 4.937 0 0 1-4.932 4.931H65.144V14.938a4.937 4.937 0 0 1 4.932-4.931h6.894a4.937 4.937 0 0 1 4.932 4.931zm-11.826-1.585c-.876 0-1.586.71-1.586 1.585v8.48h8.48c.876 0 1.586-.71 1.586-1.585v-6.895c0-.876-.71-1.585-1.586-1.585z" />
+                                    </g>
+                                    <g>
+                                       <path fill="#85aafd"
+                                          d="M55.271 10.007a4.937 4.937 0 0 1 4.932 4.931v6.895a4.937 4.937 0 0 1-4.932 4.931H43.445V14.938a4.937 4.937 0 0 1 4.932-4.931zm-6.894 3.346c-.876 0-1.586.71-1.586 1.585v8.48h8.48c.876 0 1.586-.71 1.586-1.585v-6.895c0-.876-.71-1.585-1.586-1.585z" />
+                                    </g>
+                                    <g>
+                                       <path fill="#85aafd" d="M13.395 6.765V-.032h3.346v6.797z" />
+                                    </g>
+                                    <g>
+                                       <path fill="#85aafd" d="M43.462 36.92v-6.798h3.346v6.798z" />
+                                    </g>
+                                    <g>
+                                       <path fill="#85aafd" d="M65.119 36.92v-6.798h3.346v6.798z" />
+                                    </g>
+                                 </g>
+                              </g>
+                           </svg>
+                        </a>
+                            </div>
+                            <div class="col-12 col-sm-6 overview-item text-center text-lg-left">
+                                <a href="javascript:void(0)">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="174" height="28" viewBox="0 0 174 28">
+                              <g>
+                                 <g>
+                                    <g>
+                                       <path fill="#85aafd"
+                                          d="M15.675 23.56v-1.918a7.684 7.684 0 1 0-7.685-7.685 7.589 7.589 0 0 0 1.566 4.636l1.387-1.35a5.7 5.7 0 0 1-1.028-3.289 5.772 5.772 0 1 1 5.772 5.772v-1.918a3.848 3.848 0 1 0-3.346-1.93l1.435-1.399a1.84 1.84 0 0 1-.071-.514 1.971 1.971 0 1 1 1.971 1.972 1.78 1.78 0 0 1-.562-.096l-4.96 4.839a.767.767 0 0 1-.154.119c-.012.012-.036.012-.048.023a.557.557 0 0 1-.119.06c-.023.013-.048.013-.071.024l-.109.035a.152.152 0 0 0-.067.014c-.035 0-.07.012-.096.012-.035 0-.07-.012-.108-.012a.233.233 0 0 1-.083-.012l-.109-.036c-.023-.012-.048-.012-.07-.023a.485.485 0 0 1-.109-.06.261.261 0 0 1-.06-.036.685.685 0 0 1-.096-.084c-.013-.012-.036-.023-.048-.048a9.6 9.6 0 1 1 6.87 2.905zm15.308-10.995L24.531 1.376a2.79 2.79 0 0 0-2.402-1.37H9.222c-.99 0-1.906.528-2.401 1.386L.367 12.577c-.49.86-.49 1.914 0 2.773L6.82 26.535a2.76 2.76 0 0 0 2.402 1.387h12.906c.99 0 1.905-.529 2.4-1.386l6.454-11.186a2.82 2.82 0 0 0 .001-2.785z" />
+                                    </g>
+                                    <g>
+                                       <g>
+                                          <path fill="#85aafd"
+                                             d="M44.62 19.684h-2.193V8.313h2.192c3.692 0 6.07 2.126 6.07 5.628 0 3.466-2.436 5.736-6.07 5.736zm-5.869 3.314h5.904c5.713.085 9.919-3.847 9.835-9.07.084-5.33-4.124-9.023-9.835-8.962H38.75z" />
+                                       </g>
+                                       <g>
+                                          <path fill="#85aafd"
+                                             d="M64.326 17.942a2.692 2.692 0 0 1-2.845 2.677c-1.17 0-1.935-.574-1.935-1.47s.68-1.361 1.888-1.361h2.885zm3.71 5.068v-8.019a5.316 5.316 0 0 0-5.796-5.795 7.35 7.35 0 0 0-5.914 2.785l1.918 2.27a4.62 4.62 0 0 1 3.585-1.864 2.21 2.21 0 0 1 2.508 2.378v.598h-3.394c-3.143 0-5.114 1.494-5.114 3.932 0 2.366 1.805 4.038 4.673 4.038a5.602 5.602 0 0 0 4.122-1.637v1.314h3.394z" />
+                                       </g>
+                                       <g>
+                                          <path fill="#85aafd"
+                                             d="M77.935 12.519a3.476 3.476 0 0 1 3.498 3.74 3.495 3.495 0 0 1-3.502 3.717 3.394 3.394 0 0 1-3.418-3.74 3.373 3.373 0 0 1 3.418-3.717zm5.482 8.67a6.678 6.678 0 0 0 1.76-4.955 6.636 6.636 0 0 0-6.56-7.05 5.125 5.125 0 0 0-4.357 1.996V9.485h-3.394v18.437h3.7v-6.226a5.407 5.407 0 0 0 4.05 1.637 6.677 6.677 0 0 0 4.801-2.144z" />
+                                       </g>
+                                       <g>
+                                          <path fill="#85aafd"
+                                             d="M94.439 12.519a3.469 3.469 0 0 1 3.497 3.74 3.495 3.495 0 0 1-3.501 3.717 3.394 3.394 0 0 1-3.419-3.74 3.373 3.373 0 0 1 3.419-3.717zm.68 10.814a6.678 6.678 0 0 0 6.562-7.099 6.636 6.636 0 0 0-6.561-7.05 5.125 5.125 0 0 0-4.346 1.996V9.485h-3.405v18.437h3.7v-6.226a5.408 5.408 0 0 0 4.05 1.637z" />
+                                       </g>
+                                       <g>
+                                          <path fill="#85aafd"
+                                             d="M107.721 8.229h3.083a2.5 2.5 0 0 1 2.74 2.569 2.481 2.481 0 0 1-2.74 2.593h-3.087zm7.38 14.77h4.153l-5.114-7.075a5.591 5.591 0 0 0 3.166-5.139c0-3.466-2.725-5.82-6.501-5.82h-6.776V23.01h3.699v-6.37h2.7l4.673 6.37z" />
+                                       </g>
+                                       <g>
+                                          <path fill="#85aafd"
+                                             d="M127.952 17.942a2.692 2.692 0 0 1-2.844 2.677c-1.171 0-1.936-.574-1.936-1.47s.681-1.361 1.888-1.361h2.892zm3.703 5.07v-8.02a5.316 5.316 0 0 0-5.795-5.794 7.35 7.35 0 0 0-5.903 2.783l1.918 2.27a4.62 4.62 0 0 1 3.585-1.864 2.21 2.21 0 0 1 2.51 2.378v.598h-3.394c-3.142 0-5.114 1.494-5.114 3.932 0 2.366 1.806 4.038 4.673 4.038a5.602 5.602 0 0 0 4.123-1.637v1.314h3.393z" />
+                                       </g>
+                                       <g>
+                                          <path fill="#85aafd"
+                                             d="M140.998 12.519a3.406 3.406 0 0 1 3.418 3.74 3.373 3.373 0 0 1-3.418 3.717 3.469 3.469 0 0 1-3.502-3.74 3.495 3.495 0 0 1 3.502-3.717zm3.358-10.015v8.281a5.264 5.264 0 0 0-4.052-1.613 6.643 6.643 0 0 0-6.56 7.074 6.643 6.643 0 0 0 6.56 7.075 5.125 5.125 0 0 0 4.35-1.996v1.673h3.394V2.504z" />
+                                       </g>
+                                       <g>
+                                          <path fill="#85aafd"
+                                             d="M158.683 17.942a2.692 2.692 0 0 1-2.844 2.677c-1.171 0-1.936-.574-1.936-1.47s.681-1.361 1.888-1.361h2.89zm3.684 5.07v-8.02a5.316 5.316 0 0 0-5.795-5.794 7.35 7.35 0 0 0-5.903 2.783l1.918 2.27a4.62 4.62 0 0 1 3.585-1.864 2.21 2.21 0 0 1 2.51 2.378v.598h-3.394c-3.143 0-5.114 1.494-5.114 3.932 0 2.366 1.806 4.038 4.673 4.038a5.602 5.602 0 0 0 4.123-1.637v1.314h3.393z" />
+                                       </g>
+                                       <g>
+                                          <path fill="#85aafd"
+                                             d="M173.537 12.734h-.98a3.268 3.268 0 0 0-3.633 3.525v6.751h-3.699V9.483h3.394v1.613a4.675 4.675 0 0 1 3.716-1.78 3.73 3.73 0 0 1 1.207.167v3.25z" />
+                                       </g>
+                                    </g>
+                                 </g>
+                              </g>
+                           </svg>
+                        </a>
+                            </div>
+                            <div class="col-12 col-sm-6 overview-item text-center text-lg-left">
+                                <a href="javascript:void(0)">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="67" height="32" viewBox="0 0 67 32">
+                              <g>
+                                 <g>
+                                    <g>
+                                       <g>
+                                          <g>
+                                             <g>
+                                                <g>
+                                                   <path fill="#85aafd"
+                                                      d="M11.733 27.08H2.495a.373.373 0 0 1-.293-.12.333.333 0 0 1-.065-.278l2.397-13.524h4.42l-1.72 9.703c-.019.074-.012.132.02.173.032.043.093.065.178.065h3.983c1.464 0 2.648-.27 3.617-.826.996-.57 1.778-1.446 2.394-2.678.945-1.969 2.19-8.754 2.19-11.227 0-1.546-.414-2.649-1.264-3.37-.801-.68-1.976-1.01-3.594-1.01h-3.981c-.154 0-.196.07-.239.238l-.637 3.597H5.48L6.795.404c.041-.246.21-.398.439-.398h9.237c2.5 0 4.4.666 5.65 1.981 1.19 1.255 1.796 3.107 1.796 5.504 0 3.414-1.215 11.106-2.827 14.333-.948 1.954-2.176 3.307-3.753 4.136-1.453.764-3.234 1.12-5.604 1.12z" />
+                                                </g>
+                                                <g>
+                                                   <path fill="#85aafd"
+                                                      d="M59.47 24.768c1.255 0 2.202-.641 2.788-1.84.501-1.003.947-3.372.947-4.543 0-1.56-.613-2.425-2.146-2.425-1.254 0-2.202.614-2.787 1.84-.474.947-.947 3.344-.947 4.543 0 1.533.613 2.425 2.146 2.425zm-6.633 7.33c-.167 0-.278-.112-.25-.279l3.149-17.893c.028-.167.14-.279.307-.279h2.424c.168 0 .251.112.223.279l-.195 1.059h.028c.808-.948 2.007-1.645 3.763-1.645 2.508 0 3.93 1.728 3.93 4.432 0 1.784-.502 4.822-1.366 6.55-1.087 2.174-2.732 3.066-4.961 3.066-1.84 0-2.843-.78-3.261-1.673H56.6l-1.06 6.104c-.027.167-.11.279-.278.279zm-7.915-7.33c1.254 0 2.202-.641 2.787-1.84.502-1.003.948-3.372.948-4.543 0-1.56-.614-2.425-2.146-2.425-1.255 0-2.202.614-2.788 1.84-.473.947-.947 3.344-.947 4.543 0 1.533.613 2.425 2.146 2.425zm-6.633 7.33c-.168 0-.28-.112-.251-.279l3.15-17.893c.027-.167.139-.279.306-.279h2.425c.167 0 .25.112.223.279l-.196 1.059h.028c.809-.948 2.007-1.645 3.763-1.645 2.508 0 3.93 1.728 3.93 4.432 0 1.784-.502 4.822-1.366 6.55-1.087 2.174-2.731 3.066-4.961 3.066-1.84 0-2.843-.78-3.261-1.673h-.028l-1.059 6.104c-.028.167-.111.279-.279.279zm-8.557-7.107c1.84 0 3.038-.809 3.289-2.37l.195-1.142c.028-.112-.028-.167-.14-.167h-2.145c-2.286 0-3.15.78-3.15 2.201 0 .92.641 1.478 1.951 1.478zm5.045 2.09h-2.202c-.14 0-.25-.111-.223-.279l.167-1.031h-.028c-.752.948-2.062 1.617-3.93 1.617-2.09 0-3.678-1.31-3.678-3.484 0-3.15 2.201-4.822 5.964-4.822h2.62c.111 0 .195-.056.223-.167l.111-.753c.307-1.616-.223-2.285-2.424-2.285-1.45 0-2.453.446-3.15.947-.167.112-.307.084-.362-.055l-.67-1.756c-.055-.14 0-.279.112-.363 1.143-.78 2.927-1.31 4.794-1.31 3.819 0 5.128 1.366 4.543 4.655l-1.56 8.807c-.028.168-.14.279-.307.279z" />
+                                                </g>
+                                                <g>
+                                                   <path fill="#85aafd" d="M1.082 8.5h13.517l-1.081 3.982H0z" />
+                                                </g>
+                                             </g>
+                                             <g opacity=".7">
+                                                <path fill="#85aafd"
+                                                   d="M60.414 8.394l2.41-4.905c.032-.064 0-.106-.053-.106h-.998c-.074 0-.106.031-.138.106l-1.54 3.482h-.01l-.371-3.482c-.011-.064-.054-.106-.117-.106h-.754c-.064 0-.106.042-.138.106L57.112 6.97h-.021l-.34-3.482c-.01-.075-.053-.106-.127-.106h-.87c-.075 0-.107.042-.096.106l.68 4.905c.01.064.042.106.105.106h.818c.064 0 .106-.042.138-.106l1.593-3.408h.02l.351 3.408c0 .064.043.106.106.106h.807c.064 0 .106-.042.138-.106zm-9.237-2.941c-.042 0-.053-.021-.042-.064.031-.17.095-.35.159-.488.212-.446.616-.68 1.093-.68.553 0 .86.266.86.85 0 .085-.01.212-.031.318-.011.043-.043.064-.085.064zm.541 3.164c.871 0 1.593-.382 2.082-.86.053-.053.053-.117.01-.17l-.456-.499c-.043-.042-.096-.053-.16 0-.308.287-.785.53-1.274.53-.637 0-.987-.275-.987-1.04 0-.074 0-.138.021-.212.01-.042.032-.064.074-.064h3.037a.126.126 0 0 0 .127-.106c.107-.552.138-.86.138-1.136 0-1.168-.775-1.794-1.794-1.794-1.115 0-1.837.51-2.262 1.38-.276.563-.414 1.508-.414 2.113 0 1.168.627 1.858 1.858 1.858zm-3.684-.223l.87-4.905c.011-.064-.02-.106-.084-.106h-.924c-.064 0-.106.042-.117.106l-.87 4.905c-.01.064.032.106.095.106h.924c.064 0 .096-.042.106-.106zm1.083-6.126l.16-.882c.01-.063-.022-.106-.086-.106h-.923c-.064 0-.106.043-.117.106l-.17.882c-.01.063.021.106.085.106H49c.064 0 .107-.043.117-.106zM43.797 8.5c.075 0 .107-.042.139-.106l2.612-4.905c.032-.064-.01-.106-.075-.106h-.987c-.064 0-.106.031-.138.106L43.66 6.897h-.021l-.51-3.408c-.01-.075-.053-.106-.106-.106h-.935c-.074 0-.095.042-.095.106l.881 4.905c.01.064.053.106.117.106zm-6.285-3.11c.032-.17.096-.351.16-.49.212-.445.615-.679 1.093-.679.552 0 .86.266.86.85 0 .085-.01.212-.032.318-.01.043-.042.064-.085.064h-1.953c-.043 0-.053-.021-.043-.064zm.584 3.227c.87 0 1.593-.382 2.081-.86.053-.053.053-.117.01-.17l-.456-.499c-.042-.042-.095-.053-.159 0-.308.287-.786.53-1.274.53-.637 0-.988-.275-.988-1.04 0-.074 0-.138.022-.212.01-.042.032-.064.074-.064h3.037a.126.126 0 0 0 .127-.106c.106-.552.138-.86.138-1.136 0-1.168-.775-1.794-1.794-1.794-1.115 0-1.837.51-2.262 1.38-.276.563-.414 1.508-.414 2.113 0 1.168.626 1.858 1.858 1.858zm-6.572-4.13c-.043 0-.064-.021-.053-.064l.36-2.017c.011-.043.033-.064.075-.064h1.476c.563 0 .924.319.924.828 0 .828-.574 1.306-1.306 1.317zM29.59 8.394c-.01.064.032.106.096.106h.977c.053 0 .095-.042.106-.106l.499-2.782c0-.042.032-.063.074-.063h1.274l.84 2.845c.02.074.052.106.137.106h.956c.064 0 .106-.063.074-.138l-.892-2.952c1.04-.329 1.773-1.231 1.773-2.41 0-1.04-.753-1.72-1.91-1.72H30.95c-.063 0-.106.043-.116.106L29.59 8.394z" />
+                                             </g>
+                                          </g>
+                                       </g>
+                                    </g>
+                                 </g>
+                              </g>
+                           </svg>
+                        </a>
+                            </div>
+                            <div class="col-12 col-sm-6 overview-item text-center text-lg-left">
+                                <a href="javascript:void(0)">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="155" height="31" viewBox="0 0 155 31">
+                              <g>
+                                 <g>
+                                    <g>
+                                       <g>
+                                          <path fill="#85aafd"
+                                             d="M83.743 5.852h5.816c.847 0 1.558.143 2.136.428.577.285 1.042.66 1.396 1.122.354.463.607.991.762 1.585.154.594.23 1.2.23 1.816 0 .85-.127 1.59-.38 2.222-.254.632-.608 1.148-1.062 1.55a4.447 4.447 0 0 1-1.65.903c-.647.2-1.362.3-2.147.3h-1.778v6.595h-3.323V5.852zm3.323 7.474h1.478c.66 0 1.196-.201 1.604-.602.407-.401.611-1.026.611-1.874 0-.833-.176-1.466-.53-1.897-.354-.432-.947-.649-1.778-.649h-1.385zM71.764 5.852h5.816c.847 0 1.558.143 2.135.428.577.285 1.043.66 1.396 1.122.355.463.608.991.762 1.585.154.594.231 1.2.231 1.816 0 .85-.127 1.59-.38 2.222-.255.632-.609 1.148-1.063 1.55a4.441 4.441 0 0 1-1.65.903c-.646.2-1.362.3-2.147.3h-1.777v6.595h-3.323zm3.323 7.474h1.478c.66 0 1.196-.201 1.604-.602.407-.401.611-1.026.611-1.874 0-.833-.177-1.466-.531-1.897-.354-.432-.946-.649-1.777-.649h-1.385zm-8.84-7.474l4.362 16.52h-3.462l-.762-3.494H62l-.76 3.495h-3.463L62.14 5.852zm-.44 10.296L64.216 8.72h-.046l-1.593 7.428zM45.843 5.852h5.447c1.155 0 2.086.189 2.794.566.696.367 1.27.93 1.65 1.62.392.702.658 1.547.796 2.534.139.988.208 2.09.208 3.309 0 1.45-.088 2.71-.265 3.783-.178 1.072-.482 1.955-.912 2.65a4.005 4.005 0 0 1-1.731 1.55c-.723.338-1.64.509-2.747.509h-5.24zm3.324 14.068zm1.477 0c.585 0 1.054-.1 1.409-.3.353-.201.634-.533.842-.996.207-.463.346-1.072.415-1.828.07-.756.104-1.697.104-2.823 0-.941-.03-1.766-.092-2.475-.062-.71-.189-1.3-.38-1.77-.194-.471-.478-.827-.855-1.065-.377-.24-.881-.359-1.512-.359h-1.408V19.92z" />
+                                       </g>
+                                       <g>
+                                          <path fill="#85aafd"
+                                             d="M147.002 17.142v.47c0 .372.03.711.09 1.016.06.306.17.563.334.772.164.209.383.372.658.492.276.119.62.18 1.037.18.49 0 .934-.161 1.327-.482.395-.32.591-.816.591-1.486 0-.358-.048-.667-.144-.928a1.845 1.845 0 0 0-.48-.705 3.423 3.423 0 0 0-.88-.57 12.68 12.68 0 0 0-1.35-.525 11.543 11.543 0 0 1-1.852-.782 4.994 4.994 0 0 1-1.305-.995 3.565 3.565 0 0 1-.769-1.32c-.163-.499-.245-1.076-.245-1.732 0-1.58.438-2.757 1.316-3.532.877-.775 2.081-1.163 3.613-1.163a7.86 7.86 0 0 1 1.974.234c.602.157 1.122.41 1.561.76.438.35.78.798 1.026 1.342s.368 1.196.368 1.956v.448h-3.078c0-.76-.134-1.346-.401-1.756-.268-.41-.714-.614-1.339-.614-.357 0-.654.052-.892.157-.22.09-.414.232-.568.413-.142.172-.241.374-.29.592a3.045 3.045 0 0 0-.079.694c0 .491.105.904.313 1.24.208.335.654.644 1.338.927l2.476 1.074c.61.268 1.107.547 1.494.838.386.29.695.603.925.939.231.335.39.704.48 1.107.09.402.134.849.134 1.34 0 1.686-.488 2.91-1.46 3.678-.975.768-2.332 1.152-4.071 1.152-1.814 0-3.111-.395-3.892-1.185-.781-.79-1.171-1.923-1.171-3.398v-.649h3.211zm-3.97-10.976v2.637h-3.479v13.324h-3.212V8.802h-3.479V6.166h10.17zm-13.426 0l4.215 15.961h-3.345l-.736-3.375h-4.238l-.736 3.375h-3.345l4.215-15.961zm-.424 9.948l-1.539-7.176h-.044l-1.54 7.176zm-6.802-9.948v2.637h-3.48v13.324h-3.211V8.802h-3.48V6.166zM104.069 17.14v.47c0 .372.03.711.089 1.016.06.306.17.564.334.773.164.208.383.371.658.491.276.12.621.18 1.037.18.491 0 .934-.16 1.327-.481.395-.32.592-.817.592-1.487 0-.358-.048-.667-.145-.928a1.845 1.845 0 0 0-.48-.705 3.414 3.414 0 0 0-.881-.57 12.523 12.523 0 0 0-1.35-.525 11.543 11.543 0 0 1-1.85-.782 4.993 4.993 0 0 1-1.306-.995 3.564 3.564 0 0 1-.769-1.319c-.163-.5-.245-1.077-.245-1.733 0-1.58.439-2.756 1.316-3.532.877-.774 2.082-1.162 3.613-1.162a7.86 7.86 0 0 1 1.974.234c.603.157 1.122.41 1.562.76.437.35.78.798 1.025 1.342.246.544.368 1.196.368 1.956v.448h-3.078c0-.76-.134-1.346-.401-1.756-.268-.41-.714-.614-1.338-.614-.357 0-.655.052-.893.157-.219.09-.414.232-.568.413a1.426 1.426 0 0 0-.29.592 3.044 3.044 0 0 0-.078.694c0 .491.104.904.312 1.24.208.335.654.644 1.338.927l2.476 1.074c.61.268 1.108.547 1.494.838.387.29.695.603.925.939.232.335.391.704.48 1.107.09.402.134.849.134 1.34 0 1.686-.487 2.91-1.461 3.678-.974.768-2.33 1.152-4.07 1.152-1.814 0-3.111-.395-3.892-1.185-.781-.79-1.171-1.923-1.171-3.398v-.649z" />
+                                       </g>
+                                    </g>
+                                    <g>
+                                       <path fill="#85aafd"
+                                          d="M31.18 11.54C29.803 4.669 23.494.046 16.676.614c-.08.075-.162.149-.24.224a15.6 15.6 0 0 0-1.989 2.305c-.28.397-.52.806-.724 1.212-.201.39-.367.797-.495 1.217a6.104 6.104 0 0 0-.264 2.344c.084.884.246 1.135.395 1.42.11.196.246.377.403.538.263.26.555.49.87.683.4.25.818.473 1.249.665.464.208.96.415 1.482.633 1.041.428 2.179.885 3.36 1.553.63.351 1.222.764 1.77 1.232a8.226 8.226 0 0 1 1.578 1.788c.447.692.777 1.454.977 2.253.187.744.268 1.511.24 2.278a8.968 8.968 0 0 1-.096 1.108 8.066 8.066 0 0 1-1.152 3.166 8.49 8.49 0 0 1-1.345 1.655c-.04.039-.081.075-.122.113 6.17-2.298 9.938-8.798 8.605-15.463zM16.72 27.492a13.346 13.346 0 0 0 2.292-1.96c.305-.336.58-.699.822-1.083.226-.368.399-.74.517-1.105.124-.363.175-.726.2-1.082.003-.179.006-.356-.012-.536-.012-.18-.045-.358-.075-.56a4.253 4.253 0 0 0-.297-1.005 3.289 3.289 0 0 0-.454-.747 4.509 4.509 0 0 0-.674-.658 7.913 7.913 0 0 0-.98-.65c-.755-.426-1.686-.808-2.709-1.204a70.332 70.332 0 0 1-1.61-.621 28.845 28.845 0 0 1-1.77-.751c-.615-.298-1.268-.647-1.919-1.14a7.106 7.106 0 0 1-1.799-1.946 6.547 6.547 0 0 1-.92-2.627 7.13 7.13 0 0 1-.045-1.282c.01-.204.036-.374.056-.562a10.73 10.73 0 0 1 1.69-4.565c.381-.577.815-1.118 1.295-1.617L0 3.856l5.355 26.768 9.298-1.86a24.56 24.56 0 0 0 2.066-1.272z" />
+                                    </g>
+                                 </g>
+                              </g>
+                           </svg>
+                        </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 offset-lg-4">
+                        <div class="links-block footer">
+                            <ul class="social-links">
+                                <li><span><i class="fa fa-telegram" aria-hidden="true"></i></span><a href="https://t.me/bnbcredglobal" target="_blank" style="color:white">@BNBcred
+                              BNBGroup</a></li>
+                            </ul>
+                        </div>
+                        <div class="white-text">We offer bonuses for the total number of active investors on the smart contract and a personal retention bonus with a growing percentage depending on the base income. Maximum possible yield: + 300% for each deposit By placing your
+                            funds into our smart contract, you will 3X your income.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="border-radius: 20px">
+                <div class="modal-header" style="border-radius: 18px 18px 0 0; background: #19191a; color: white;">
+                    <h5 class="modal-title">Limits</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" style="color: white">×</span>
+               </button>
+                </div>
+                <div class="modal-body">
+                    <p>Withdrawals are available once a day.<br> Deposits 0.05 - 12.4999 BNB - Withdraw limited to 2.5 BNB<br> Deposits 12.5 - 24.9999 BNB - Withdraw limited to 6.25 BNB<br> Deposits 25 - 99.99 BNB - Withdraw limited to 12.5 BNB<br> Deposits
+                        100 - 149.999 BNB - Withdraw limited to 25 BNB<br> Deposits 150 - and more BNB - Withdraw limited to 50 BNB
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://translate.yandex.net/website-widget/v1/widget.js?widgetId=ytWidget&pageLang=en&widgetTheme=dark&autoMode=true"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/10.15.5/sweetalert2.all.min.js" crossorigin="anonymous"></script>
+    <script src="js/parallax.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/interfaces.js?1"></script>
+    <script src="js/common.js"></script>
+    <script src="js/appeccb.js?5"></script>
+</body>
+
+</html>

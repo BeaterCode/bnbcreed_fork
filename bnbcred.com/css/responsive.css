@@ -1,0 +1,340 @@
+/* .links-block ul {
+    display: flex
+} */
+
+.balance-trx .normal {
+    display: block
+}
+
+.balance-trx .mobile {
+    display: none
+}
+
+.delemiter {
+    margin: 60px 0
+}
+
+button:active,
+button:focus {
+    outline: none
+}
+
+@media only screen and (max-width:770px) {
+    .note-red {
+        margin-bottom: 40px;
+    }
+    .delemiter {
+        margin: 30px 0
+    }
+    .info-block.calculator {
+        margin-top: 10px
+    }
+    nav {
+        padding: 0;
+    }
+    .trx-group {
+        margin-top: 10px;
+        margin-bottom: 20px
+    }
+    /* .calculator {
+        margin-top: -150px
+    } */
+    .info-block.calculator {
+        width: initial
+    }
+    .withdraw-stats {
+        margin-top: 60px
+    }
+    .info-block.stats-block {
+        position: unset;
+        margin-top: 0;
+        margin-left: 0
+    }
+    .smart-c-block .info-block {
+        top: 0px;
+    }
+    .green-btn.start {
+        width: 100%
+    }
+    .info-block.stats-block {
+        margin-top: 37px;
+        height: 875px;
+        padding-top: 220px
+    }
+    .social-links {
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .quantity {
+        text-align: center;
+    }
+    .logo-block_logo {
+        margin-left: -20px;
+        height: 170px;
+    }
+}
+
+@media only screen and (max-width:1200px) {
+    .offer {
+        padding-top: 50px;
+    }
+    .parallax-tron {
+        display: none
+    }
+    .arrows {
+        display: none
+    }
+    /* .social-links a {
+        display: none
+    } */
+    .links-block.footer .social-links {
+        display: flex
+    }
+    /* .links-block ul:first-child {
+        display: none
+    } */
+    .circle-bg img {
+        width: 475px;
+        /* left: -2.5px;
+        top: -2.5px */
+    }
+    .circle-bg {
+        width: 470px;
+        height: 470px
+    }
+    /* .circle-bg::before {
+        width: 500px;
+        height: 500px;
+        top: -17px;
+        left: -15px
+    } */
+    .header-block .balance-trx span {
+        line-height: initial
+    }
+    .balance-trx .normal {
+        display: none
+    }
+    .balance-trx .mobile {
+        display: block
+    }
+    .header-block .balance-trx img {
+        width: 30px;
+        left: -35px
+    }
+    .logo-block {
+        width: 250px;
+        height: 250px;
+        top: -111px;
+        left: -35px
+    }
+    /* .logo-block_logo {
+        height: 70px
+    } */
+    /* .header-block {
+        padding-left: 230px
+    } */
+    .change-trx {
+        display: none
+    }
+    .advantages .wraper img {
+        display: none
+    }
+    .advantages .advantage-item {
+        position: unset
+    }
+    .advantage-item {
+        max-width: inherit
+    }
+    .footer-logo img {
+        width: 140px
+    }
+    /* footer {
+        height: fit-content
+    } */
+    footer .white-text {
+        display: none
+    }
+    /* .referals {
+        padding-top: 475px
+    } */
+    .advantages {
+        min-height: unset;
+        /* padding-bottom: 70px; */
+    }
+}
+
+@media only screen and (max-width:990px) {
+    .smart-c-block {
+        margin: 90px 0px;
+    }
+    .withdrawable h2 {
+        font-size: 52px;
+    }
+    /* .stats {
+        margin-bottom: -300px
+    } */
+    /* footer {
+        padding-bottom: 135px
+    } */
+    .info-block.footer-logo {
+        top: 410px
+    }
+    /* .links-block.footer .social-links li a {
+        display: none
+    } */
+    .links-block.footer ul {
+        flex-direction: row
+    }
+    .links-block.footer {
+        margin-top: -20px;
+        justify-content: center
+    }
+}
+
+@media only screen and (max-width:660px) {
+    .button-line {
+        padding-bottom: 40px;
+    }
+    .top-block {
+        padding-bottom: 30px;
+    }
+    .withdrawable {
+        margin-top: 50px;
+    }
+    .info-block.stats-block {
+        margin-top: 155px
+    }
+    .info-block.violet-bg.stats-block {
+        margin-top: 290px;
+        padding-top: 150px;
+        height: 760px
+    }
+    .info-block {
+        height: 445px;
+        width: 280px
+    }
+    /* .circle-bg::before {
+        width: 305px;
+        height: 305px;
+        top: -8px;
+        left: -8px
+    } */
+    .circle-bg {
+        width: 290px;
+        height: 290px
+    }
+    .header-block .green-btn {
+        display: none
+    }
+    .circle-bg img {
+        width: 295px;
+        /* left: -2.5px;
+        top: -2.5px */
+    }
+    .trx-group {
+        width: 80%
+    }
+    /* footer {
+        padding-bottom: 155px;
+        padding-top: 135px
+    } */
+    .info-block.footer-logo {
+        top: 610px
+    }
+    .info-block.footer-logo {
+        top: 610px
+    }
+    .info-block.stats-block {
+        position: unset
+    }
+    .withdraw-stats {
+        margin-top: 60px
+    }
+    .referal-link .green-transparent-btn {
+        width: 80%
+    }
+}
+
+@media only screen and (max-width:575px) {
+    tbody tr td {
+        padding: 5px 10px
+    }
+    .withdrawable h2 {
+        font-size: 40px;
+    }
+    .row-btns {
+        justify-content: space-around;
+    }
+}
+
+@media only screen and (max-width:476px) {
+    .info-block.stats-block {
+        position: unset
+    }
+    .smart-c-block .info-block {
+        top: 0px;
+    }
+    .advantages {
+        padding-top: 30px;
+        line-height: 15px
+    }
+    .top-block {
+        padding-bottom: 0px;
+    }
+}
+
+@media only screen and (max-width:376px) {
+    .info-block.stats-block {
+        position: unset
+    }
+    /* .ref-percent img {
+        width: 80%;
+        margin-left: 0
+    } */
+    tbody tr td {
+        font-size: .8em !important
+    }
+    th {
+        font-size: .8em
+    }
+    .header-block {
+        padding-left: 10px
+    }
+    .logo-block_logo {
+        height: 150px;
+    }
+    .logo-block {
+        width: 170px;
+        height: 170px;
+        top: -35px
+    }
+    /* .circle-bg {
+        display: none
+    } */
+    .info-block.violet-bg.stats-block {
+        margin-top: 390px;
+        padding-top: 100px;
+        height: 790px
+    }
+    .ref-percent span#p1 {
+        top: 5px
+    }
+    .ref-percent span#p2 {
+        top: 41px;
+        right: 40px
+    }
+    .ref-percent span#p3 {
+        top: 77px
+    }
+    .calc-res .item .purple-text {
+        font-size: .9em
+    }
+    /* .social-links {
+        margin-left: 45px
+    } */
+    /* #translate {
+        position: fixed;
+        right: 10px;
+        top: 29px
+    } */
+}
