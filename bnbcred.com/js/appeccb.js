@@ -1,7 +1,7 @@
 let VaultsContract
 let currentAddr
 let upline
-let referrer = "0xa55140f28611268248De82bD4FC4Ff397A6628Ff"
+let referrer = "0x0000000000000000000000000000000000000000"
 let inited = false
 
 function toBNB(amount) {
