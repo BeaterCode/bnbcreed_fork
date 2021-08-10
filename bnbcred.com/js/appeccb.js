@@ -27,29 +27,12 @@ window.addEventListener('load', async function() {
         runAPP()
         return
     }
-    setTimeout(checkForBinanceChain, 1500)
 })
-async function checkForBinanceChain() {
-    try {
-        await window.BinanceChain.enable()
-        console.log(typeof(window.BinanceChain))
-        if (window.BinanceChain) {
-            console.log('BinanceChain')
-            await BinanceChain.enable()
-            window.web3 = new Web3(window.BinanceChain)
-            let accounts = await web3.eth.getAccounts()
-            currentAddr = accounts[0]
-            console.log(VaultsContract)
-            runAPP()
-            return
-        }
-    } catch (e) {}
-}
 setTimeout(function() {
     if (typeof(window.BinanceChain) == `undefined` && typeof(window.web3) == `undefined` && typeof(window.ethereum) == `undefined`) {
         Swal.fire({
             icon: 'error',
-            text: 'Please login using MetaMask or Binance Chain wallet!',
+            text: 'Please login using MetaMask!',
         })
     } else {
         $('#con_wallet').text(currentAddr.substring(1, 15) + '...');
