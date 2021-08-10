@@ -59,7 +59,7 @@ setTimeout(function() {
 async function runAPP() {
     let networkID = await web3.eth.net.getId();
     console.log('network id', networkID);
-    if (networkID == 97) {
+    if (networkID == 137) {
         $(".dev_version").show()
         VaultsContract = await new web3.eth.Contract(ABI, CONTRACT_ADDRESS_DEV)
     } else {
