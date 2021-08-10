@@ -59,7 +59,7 @@ setTimeout(function() {
 async function runAPP() {
     let networkID = await web3.eth.net.getId();
     console.log('network id', networkID);
-    if (networkID == 137) {
+    if (networkID == 80001) {
         $(".dev_version").show()
         VaultsContract = await new web3.eth.Contract(ABI, CONTRACT_ADDRESS_DEV)
     } else {
@@ -120,24 +120,6 @@ async function runAPP() {
             total_return = n(contractPercent1, 7);
             $('#contractPercent1Return').html(total_return + '%')
             // $('#contractPercent1Return').html(150 + '%') ; 
-        })
-
-
-        VaultsContract.methods.getPercent(2).call().then(function(r) {
-            contractPercent2 = r / 10;
-            $('#contractPercent2').html(contractPercent2);
-
-            total_return = n(contractPercent2, 14);
-            $('#contractPercent2Return').html(total_return + '%');
-            //$('#contractPercent2Return').html(388 + '%')  
-        })
-        VaultsContract.methods.getPercent(3).call().then(function(r) {
-            contractPercent3 = r / 10;
-            $('#contractPercent3').html(contractPercent3);
-
-            total_return = n(contractPercent3, 21);
-            $('#contractPercent3Return').html(total_return + '%');
-            //$('#contractPercent3Return').html(640 + '%');
         })
         VaultsContract.methods.getUserAvailable(currentAddr).call().then(function(r) {
             console.log('user avaliable', r);
