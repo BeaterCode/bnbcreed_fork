@@ -111,16 +111,7 @@ async function runAPP() {
         // VaultsContract.methods.getUserReferrer(currentAddr).call().then(function(r) {
         //     $("#upline-address").html(r);
         // })
-
-
-        VaultsContract.methods.getPercent(1).call().then(function(r) {
-            contractPercent1 = r / 10;
-            console.log('contractPercent1', contractPercent1);
-            $('#contractPercent1').html(contractPercent1);
-            total_return = n(contractPercent1, 7);
-            $('#contractPercent1Return').html(total_return + '%')
-            // $('#contractPercent1Return').html(150 + '%') ; 
-        })
+        
         VaultsContract.methods.getUserAvailable(currentAddr).call().then(function(r) {
             console.log('user avaliable', r);
             $("#user-available").html(toBNB(r))
@@ -580,6 +571,12 @@ function get_profit(e, t) {
         (a = ((n * (o - 100)) / 100).toFixed(2)),
         // c.render(a, document.getElementById("plan3profit"));
         $('#plan3profit').html(a);
+    }
+    if (0 == t) {
+        for (var o = 100, d = 0; d < 14; d++)
+            o += o * (contractPercent0 / 100);
+        (a = ((n * (o - 100)) / 100).toFixed(2)),
+        $('#plan0rofit').html(a);
     }
 }
 
