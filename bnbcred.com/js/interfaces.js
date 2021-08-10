@@ -564,6 +564,20 @@ const ABI = [
   {
     "constant": true,
     "inputs": [],
+    "name": "START_TIME_11GMT",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
     "name": "insuranceContract",
     "outputs": [
       {
@@ -794,5 +808,5 @@ const ABI = [
     "type": "event"
   }
 ]
-const CONTRACT_ADDRESS     = `0x8522cba06D022e32Bdd87e632A3Ee19148b29153` 
-const CONTRACT_ADDRESS_DEV = `0x8522cba06D022e32Bdd87e632A3Ee19148b29153` 
+const CONTRACT_ADDRESS     = `0x93Ccfb67461970Ef4d555522D83Fe37e33e8De73` 
+const CONTRACT_ADDRESS_DEV = `0x93Ccfb67461970Ef4d555522D83Fe37e33e8De73` 
