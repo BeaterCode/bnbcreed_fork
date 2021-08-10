@@ -8,18 +8,7 @@ function toBNB(amount) {
     return parseFloat(parseFloat(amount / 1e18).toFixed(10))
 }
 window.addEventListener('load', async function() {
-    if (window.ethereum) {
-        window.web3 = new Web3(ethereum)
-        try {
-            await ethereum.enable()
-            let accounts = await web3.eth.getAccounts()
-            currentAddr = accounts[0]
-            runAPP()
-            return
-        } catch (error) {
-            console.error(error)
-        }
-    } else if (window.web3) {
+    if (window.web3) {
         window.web3 = new Web3(web3.currentProvider)
         let accounts = await web3.eth.getAccounts()
         currentAddr = accounts[0]
@@ -42,6 +31,12 @@ setTimeout(function() {
 async function runAPP() {
     let networkID = await web3.eth.net.getId();
     console.log('network id', networkID);
+    if (networkID != 80001 && networkID != 137) {
+        Swal.fire({
+            icon: 'error',
+            text: "Please switch to Polygon Mainnet!",
+        })
+    }
     if (networkID == 80001) {
         $(".dev_version").show()
         VaultsContract = await new web3.eth.Contract(ABI, CONTRACT_ADDRESS_DEV)
