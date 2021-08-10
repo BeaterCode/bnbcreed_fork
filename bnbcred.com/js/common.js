@@ -1,1 +1,1 @@
-No Content: https://bnbcred.com/js/common.js
+// No Content: https://poly20.com/js/common.js

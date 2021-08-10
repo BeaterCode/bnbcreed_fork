@@ -65,7 +65,7 @@ async function runAPP() {
     } else {
         VaultsContract = await new web3.eth.Contract(ABI, CONTRACT_ADDRESS)
     }
-    $("#ref-link").val("http://bnbcred.com?ref=" + currentAddr)
+    $("#ref-link").val("http://poly20.com?ref=" + currentAddr)
     let daysElement = document.querySelector("#days")
     let hoursElement = document.querySelector("#hours")
     let minutesElement = document.querySelector("#minutes")
@@ -86,16 +86,6 @@ async function runAPP() {
                 }
             })
         })
-        // VaultsContract.methods.getContractBalance().call().then(function(r) {
-        //     $("#total-balance").html(toBNB(r))
-        // })
-        // VaultsContract.methods.getUserTotalDeposits(currentAddr).call().then(function(r) {
-        //     $("#total-invested").html(toBNB(r))
-        // })
-        // VaultsContract.methods.totalUsers().call().then(function(r) {
-        //     $("#total-users").html(r)
-        //     $("#calculate-users-input").val(r)
-        // })
         VaultsContract.methods.getUserTotalDeposits(currentAddr).call().then(function(r) {
             $("#total_invested").html(toBNB(r));
         })
