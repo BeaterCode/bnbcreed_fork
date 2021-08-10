@@ -13,6 +13,7 @@ window.addEventListener('load', async function() {
 
         let networkID = await web3.eth.net.getId();
         console.log('network id', networkID);
+        /*
         if (networkID != 80001 && networkID != 137) {
             Swal.fire({
                 icon: 'error',
@@ -20,7 +21,7 @@ window.addEventListener('load', async function() {
             })
             return
         }
-
+        */
         let accounts = await web3.eth.getAccounts()
         currentAddr = accounts[0]
         console.log(VaultsContract)
