@@ -9,8 +9,8 @@ function toBNB(amount) {
 }
 window.addEventListener('load', async function() {
     if (window.web3) {
-        window.web3 = new Web3(web3.currentProvider)
-
+        window.web3 = new Web3(web3.currentProvider);
+        await ethereum.enable();
         let networkID = await web3.eth.net.getId();
         console.log('network id', networkID);
 
