@@ -423,6 +423,10 @@ const ABI = [
       {
         "name": "totalBonus",
         "type": "uint256"
+      },
+      {
+        "name": "latestWithdrawal",
+        "type": "uint256"
       }
     ],
     "payable": false,
@@ -809,4 +813,4 @@ const ABI = [
   }
 ]
 
-const CONTRACT_ADDRESS     = `0x54965cdbf81ad9eae1b54f346360889d37d2bc1a`
+const CONTRACT_ADDRESS     = `0x939e94e90f8b988c091c599ea14461cc085fd393`
