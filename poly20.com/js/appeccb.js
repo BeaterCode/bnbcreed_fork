@@ -417,12 +417,15 @@ $(function() {
             ltDate.setUTCSeconds(lwt);
             ltDate.setDate(ltDate.getDate() + 1);
             var dateNow = new Date();
-
+            
             if(dateNow.getTime() < ltDate.getTime()) {
                 var dateDiff = new Date(ltDate.getTime() - dateNow.getTime());
-                var remTimeText = dateDiff.getHours() + 'h ' + dateDiff.getMinutes() + 'm '+ dateDiff.getSeconds() + 's ';
-                //console.log('remainign time: ' + remTimeText);
-                let withText = 'Next withdraw available in: \n' + remTimeText;
+                var hours = Math.floor((dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((dateDiff % (1000 * 60)) / 1000);
+                var remainText = hours + "h " + minutes + "m " + seconds + "s ";
+
+                let withText = 'Next withdraw available in: \n' + remainText;
                 Swal.fire({
                     icon: 'info',
                     text: withText,
