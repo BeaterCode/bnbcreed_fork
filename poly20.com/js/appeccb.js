@@ -14,7 +14,8 @@ window.addEventListener('load', async function() {
         let networkID = await web3.eth.net.getId();
         console.log('network id', networkID);
 
-        if (networkID != 137) {
+        //if (networkID == 137) {
+        if (networkID == 97) {
             Swal.fire({
                 icon: 'error',
                 text: "Please switch to Polygon Mainnet!",
@@ -42,7 +43,8 @@ setTimeout(function() {
 async function runAPP() {
     let networkID = await web3.eth.net.getId();
     console.log('network id', networkID);
-    if (networkID == 137) {
+    //if (networkID == 137) {
+    if (networkID == 97) {
         VaultsContract = await new web3.eth.Contract(ABI, CONTRACT_ADDRESS)
     }
     $("#ref-link").val("http://poly20.com?ref=" + currentAddr)
