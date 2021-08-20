@@ -413,21 +413,26 @@ $(function() {
         let lwt;
         getUserLatestWithdrawal().then(result => {
             lwt = result.latestWithdrawal;
-            console.log(lwt);
-        }).catch(err => {});
+            var ltDate = new Date(0);
+            ltDate.setUTCSeconds(lwt);
+            ltDate.setDate(ltDate.getDate() + 1);
+            var dateNow = new Date();
 
-        var ltDate = new Date(0);
-        ltDate.setUTCSeconds(lwt);
-        ltDate.setDate(ltDate.getDate() + 1);
-        console.log(ltDate);
-        let withText = 'Next withdraw available date: ' + ltDate;
-        Swal.fire({
-            icon: 'info',
-            text: withText,
-        })
-        /*VaultsContract.methods.withdraw().send({
-            from: currentAddr
-        })*/
+            if(dateNow.getTime() < ltDate.getTime()) {
+                var dateDiff = new Date(ltDate.getTime() - dateNow.getTime());
+                var remTimeText = dateDiff.getHours() + 'h ' + dateDiff.getMinutes() + 'm '+ dateDiff.getSeconds() + 's ';
+                //console.log('remainign time: ' + remTimeText);
+                let withText = 'Next withdraw available in: \n' + remTimeText;
+                Swal.fire({
+                    icon: 'info',
+                    text: withText,
+                })
+            } else {
+                VaultsContract.methods.withdraw().send({
+                    from: currentAddr
+                })
+            }
+        }).catch(err => {});
     })
     $("#ribtn").click(function() {
         VaultsContract.methods.reinvest().send({
