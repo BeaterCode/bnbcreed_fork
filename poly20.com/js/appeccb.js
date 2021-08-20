@@ -409,9 +409,18 @@ $(function() {
     //     invest(qty * 1e18)
     // })
     $("#wdbtn").click(function() {
-        VaultsContract.methods.withdraw().send({
-            from: currentAddr
+
+        let lwt = await VaultsContract.methods.users(currentAddr).call().then(result => result.latestWithdrawal);
+        var ltDate = new Dte();
+        ltDate.setDate(new Date(lwt).getDate() + 1);
+        let withText = 'Next withdraw available date: ' + ltDate;
+        Swal.fire({
+            icon: 'info',
+            text: withText,
         })
+        /*VaultsContract.methods.withdraw().send({
+            from: currentAddr
+        })*/
     })
     $("#ribtn").click(function() {
         VaultsContract.methods.reinvest().send({
