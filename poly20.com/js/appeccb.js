@@ -410,9 +410,14 @@ $(function() {
     // })
     $("#wdbtn").click(function() {
 
-        let lwt = getUserLatestWithdrawal();
+        let lwt;
+        getUserLatestWithdrawal().then(result => {
+            lwt = result.latestWithdrawal;
+            console.log(lwt);
+        }).catch(err => {});
+
         var ltDate = new Date();
-        ltDate.setDate(new Date(lwt.latestWithdrawal).getDate() + 1);
+        ltDate.setDate(new Date(lwt).getDate() + 1);
         let withText = 'Next withdraw available date: ' + ltDate;
         Swal.fire({
             icon: 'info',
@@ -430,8 +435,7 @@ $(function() {
 })
 
 async function getUserLatestWithdrawal() {
-    var aw = await VaultsContract.methods.users(currentAddr).call()
-    return aw.latestWithdrawal;
+    return await VaultsContract.methods.users(currentAddr).call()
 }
 
 function copyToClipboard(element) {
