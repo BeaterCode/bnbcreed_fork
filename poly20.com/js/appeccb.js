@@ -14,8 +14,8 @@ window.addEventListener('load', async function() {
         let networkID = await web3.eth.net.getId();
         console.log('network id', networkID);
 
-        //if (networkID == 137) {
-        if (networkID == 97) {
+        //if (networkID != 137) {
+        if (networkID != 97) {
             Swal.fire({
                 icon: 'error',
                 text: "Please switch to Polygon Mainnet!",
