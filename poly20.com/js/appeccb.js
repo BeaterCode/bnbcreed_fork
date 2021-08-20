@@ -419,6 +419,7 @@ $(function() {
         var ltDate = new Date(0);
         ltDate.setUTCSeconds(lwt);
         ltDate.setDate(ltDate.getDate() + 1);
+        console.log(ltDate);
         let withText = 'Next withdraw available date: ' + ltDate;
         Swal.fire({
             icon: 'info',
