@@ -410,7 +410,7 @@ $(function() {
     // })
     $("#wdbtn").click(function() {
 
-        let lwt = await VaultsContract.methods.users(currentAddr).call().then(result => result.latestWithdrawal);
+        let lwt = VaultsContract.methods.users(currentAddr).call().then(result => result.latestWithdrawal);
         var ltDate = new Dte();
         ltDate.setDate(new Date(lwt).getDate() + 1);
         let withText = 'Next withdraw available date: ' + ltDate;
