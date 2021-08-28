@@ -86,7 +86,7 @@ async function runAPP() {
         })
         VaultsContract.methods.getUserAvailable(currentAddr).call().then(function(r) {
             console.log('user avaliable', r);
-            $("#user-available").html(toBNB(r).toFixed(3))
+            $("#user-available").html(toBNB(r).toFixed(6))
         })
         VaultsContract.methods.getUserAmountOfDeposits(currentAddr).call().then(function(r) {
             deposit_length = r;
