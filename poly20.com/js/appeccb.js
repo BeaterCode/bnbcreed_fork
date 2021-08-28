@@ -73,20 +73,20 @@ async function runAPP() {
             $("#referral_total_bonus").html(toBNB(r));
         })
         VaultsContract.methods.getUserReferralBonus(currentAddr).call().then(function(r) {
-            $("#referral_avaliable").html(toBNB(r));
+            $("#referral_avaliable").html(toBNB(r).toFixed(4));
         })
         VaultsContract.methods.getUserReferralBonus(currentAddr).call().then(function(r) {
-            $("#referral_avaliable").html(toBNB(r));
+            $("#referral_avaliable").html(toBNB(r).toFixed(4));
         })
         VaultsContract.methods.getUserReferralWithdrawn(currentAddr).call().then(function(r) {
-            $("#referral_avaliable").html(toBNB(r));
+            $("#referral_avaliable").html(toBNB(r).toFixed(4));
         })
         VaultsContract.methods.totalStaked().call().then(function(r) {
             $("#total_staked").html(toBNB(r));
         })
         VaultsContract.methods.getUserAvailable(currentAddr).call().then(function(r) {
             console.log('user avaliable', r);
-            $("#user-available").html(toBNB(r).toFixed(6))
+            $("#user-available").html(toBNB(r).toFixed(4))
         })
         VaultsContract.methods.getUserAmountOfDeposits(currentAddr).call().then(function(r) {
             deposit_length = r;
