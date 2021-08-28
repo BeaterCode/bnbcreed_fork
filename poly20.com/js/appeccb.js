@@ -3,6 +3,7 @@ let currentAddr
 let upline
 let referrer = "0x0000000000000000000000000000000000000000"
 let inited = false
+let acceptedNetwork = 97; //137;
 
 function toBNB(amount) {
     return parseFloat(parseFloat(amount / 1e18).toFixed(10))
@@ -13,9 +14,7 @@ window.addEventListener('load', async function() {
         await ethereum.enable();
         let networkID = await web3.eth.net.getId();
         console.log('network id', networkID);
-
-        //if (networkID != 137) {
-        if (networkID != 97) {
+        if (networkID != acceptedNetwork) {
             Swal.fire({
                 icon: 'error',
                 text: "Please switch to Polygon Mainnet!",
@@ -43,11 +42,10 @@ setTimeout(function() {
 async function runAPP() {
     let networkID = await web3.eth.net.getId();
     console.log('network id', networkID);
-    //if (networkID == 137) {
-    if (networkID == 97) {
+    if (networkID == acceptedNetwork) {
         VaultsContract = await new web3.eth.Contract(ABI, CONTRACT_ADDRESS)
     }
-    $("#ref-link").val("http://poly20.com?ref=" + currentAddr)
+    $("#ref-link").val("http://poly20.finance?ref=" + currentAddr)
     let daysElement = document.querySelector("#days")
     let hoursElement = document.querySelector("#hours")
     let minutesElement = document.querySelector("#minutes")
@@ -71,36 +69,26 @@ async function runAPP() {
         VaultsContract.methods.getUserTotalDeposits(currentAddr).call().then(function(r) {
             $("#total_invested").html(toBNB(r));
         })
-
         VaultsContract.methods.getUserReferralTotalBonus(currentAddr).call().then(function(r) {
             $("#referral_total_bonus").html(toBNB(r));
         })
         VaultsContract.methods.getUserReferralBonus(currentAddr).call().then(function(r) {
             $("#referral_avaliable").html(toBNB(r));
         })
-
         VaultsContract.methods.getUserReferralBonus(currentAddr).call().then(function(r) {
             $("#referral_avaliable").html(toBNB(r));
         })
-
         VaultsContract.methods.getUserReferralWithdrawn(currentAddr).call().then(function(r) {
             $("#referral_avaliable").html(toBNB(r));
         })
-
         VaultsContract.methods.totalStaked().call().then(function(r) {
             $("#total_staked").html(toBNB(r));
         })
-        // VaultsContract.methods.getUserReferrer(currentAddr).call().then(function(r) {
-        //     $("#upline-address").html(r);
-        // })
-        
         VaultsContract.methods.getUserAvailable(currentAddr).call().then(function(r) {
             console.log('user avaliable', r);
-            $("#user-available").html(toBNB(r))
+            $("#user-available").html(toBNB(r).toFixed(3))
         })
-
         VaultsContract.methods.getUserAmountOfDeposits(currentAddr).call().then(function(r) {
-            // console.log('deposit length',r);
             deposit_length = r;
             c = Math.floor(Date.now() / 1e3);
             s = [14, 7, 14, 21];
@@ -108,16 +96,10 @@ async function runAPP() {
             var html = '';
             var valueToPush = new Array();
             if (r > 0) {
-
                 for (var i = 0; i < r; i++) {
-
-
                     VaultsContract.methods.getUserDepositInfo(currentAddr, i).call().then(function(p) {
                         console.log('getUserDepositInfo', p);
-                        daysLeft = (
-                            Number(p.finish - c) / 84600
-                        ).toFixed(2);
-
+                        daysLeft = (Number(p.finish - c) / 84600).toFixed(2);
                         if (daysLeft <= 0) {
                             status = "Finish";
                         } else {
@@ -128,19 +110,15 @@ async function runAPP() {
                         amount = toBNB(p.amount).toFixed(2);
                         profit = toBNB(p.profit).toFixed(2);
                         plan = Number(parseInt(p.plan) + parseInt(1));
-                        // plan = p.plan;
                         percent = Number(p.percent / 10);
                         start = new Intl.DateTimeFormat("en-GB", {
                             month: "short",
                             day: "2-digit",
                         }).format(1e3 * p.start);
-
-
                         finish = new Intl.DateTimeFormat("en-GB", {
                             month: "short",
                             day: "2-digit",
                         }).format(1e3 * p.finish);
-
                         html += '<div class="col-md-4">';
                         html += ' <div class="stakeDiv">';
                         html += ' <div class="d-flex align-items-start justify-content-between">';
@@ -154,36 +132,22 @@ async function runAPP() {
                         html += ' <p class="text-right">' + finish + '</p>';
                         html += '</div></div><div class="d-flex align-items-start justify-content-between"><div class="mb-2">';
                         html += '<h2>' + amount + '</h2>';
-                        html += '<h4>BNB</h4>';
+                        html += '<h4>MATIC</h4>';
                         html += '</div><div class="mb-2">';
                         html += '<h2>' + profit + '</h2>';
-                        html += '<h4 class="text-right">BNB</h4></div></div><div class="progress">';
+                        html += '<h4 class="text-right">MATIC</h4></div></div><div class="progress">';
                         html += ' <span style="width: ' + percentFinish + '%">' + percentFinish + '%</span>';
                         html += ' </div></div></div>';
                         console.log(html);
                         console.log('i', i);
                         console.log('r', r);
-                        // if(parseInt(i) == parseInt(r-1))
-                        // {
-                        //     $('#mystake_row').append(html);
-                        // }
-                        // $('#mystake_row').append(html);
-
                     })
                 }
-                // document.querySelector('#mystake_row').innerHTML = html;
-                //console.log('mystake',mystake);
                 setTimeout(() => {
                     append_html(html);
                 }, 2000);
-
             }
-
-
-
         })
-
-
 
         function n(e, t) {
             if ("..." !== e) {
@@ -197,156 +161,14 @@ async function runAPP() {
             var n = ((e - t) / e) * 100;
             return Math.round(Math.abs(n));
         }
-
         VaultsContract.methods.getUserDownlineCount(currentAddr).call().then(function(r) {
-            // console.log('downline',r[0]);
             $('#ref_1').html(r[0]);
             $('#ref_2').html(r[1]);
             $('#ref_3').html(r[2]);
         })
-
-
         VaultsContract.methods.getUserReferralBonus(currentAddr).call().then(function(r) {
             $("#total-refbonus").text(toBNB(r))
         })
-        // VaultsContract.methods.getUserAmountOfReferrals(currentAddr).call().then(function(r) {
-        //     let ref_1 = toBNB(r[0])
-        //     let ref_2 = toBNB(r[1])
-        //     let ref_3 = toBNB(r[2])
-        //     $("#ref_1").text(ref_1)
-        //     $("#ref_2").text(ref_2)
-        //     $("#ref_3").text(ref_3)
-        // })
-        // VaultsContract.methods.getUserReferrer(currentAddr).call().then(function(r) {
-        //     if (r != 0x0000000000000000000000000000000000000000 && r != referrer) {
-        //         $("#upline-address").text([...r.split('').slice(0, 8), '...', ...r.split('').slice(42 - 6)].join(''))
-        //     } else {
-        //         $("#upline-address").text("-")
-        //     }
-        // })
-        // VaultsContract.methods.getContractUsersRate(currentAddr).call().then(function(r) {
-        //     let rate = r
-        //     let userBonus = (rate - 300) / 100
-        //     VaultsContract.methods.getUserPercentRate(currentAddr).call().then(function(res) {
-        //         let totalRate = res
-        //         let holdBonus = (totalRate - rate) / 100
-        //         $("#basic-profit").text("3%")
-        //         $("#user-bonus").text(userBonus.toFixed(2) + '%')
-        //         $("#hold-bonus").text(holdBonus.toFixed(2) + '%')
-        //     })
-        // })
-        // VaultsContract.methods.getUserAmountOfDeposits(currentAddr).call().then(function(r) {
-        //     let amount = r
-        //     if (amount > 5) {
-        //         amount = 5
-        //     }
-        //     let content = ''
-        //     if (amount == 1) {
-        //         VaultsContract.methods.getUserDepositInfo(currentAddr, 0).call().then(function(res) {
-        //             let depAmount = toBNB(res[0])
-        //             let startTime = res[1]
-        //             let readableTime = getTime(startTime)
-        //             content += `<tr><td>${readableTime}</td><td>${depAmount} BNB</td></tr>`
-        //             $("#user-deposits").html(content)
-        //         })
-        //     }
-        //     if (amount == 2) {
-        //         VaultsContract.methods.getUserDepositInfo(currentAddr, 0).call().then(function(res) {
-        //             let depAmount = toBNB(res[0])
-        //             let startTime = res[1]
-        //             let readableTime = getTime(startTime)
-        //             content += `<tr><td>${readableTime}</td><td>${depAmount} BNB</td></tr>`
-        //             VaultsContract.methods.getUserDepositInfo(currentAddr, 1).call().then(function(res) {
-        //                 depAmount = toBNB(res[0])
-        //                 startTime = res[1]
-        //                 readableTime = getTime(startTime)
-        //                 content += `<tr><td>${readableTime}</td><td>${depAmount} BNB</td></tr>`
-        //                 $("#user-deposits").html(content)
-        //             })
-        //         })
-        //     }
-        //     if (amount == 3) {
-        //         VaultsContract.methods.getUserDepositInfo(currentAddr, 0).call().then(function(res) {
-        //             let depAmount = toBNB(res[0])
-        //             let startTime = res[1]
-        //             let readableTime = getTime(startTime)
-        //             content += `<tr><td>${readableTime}</td><td>${depAmount} BNB</td></tr>`
-        //             VaultsContract.methods.getUserDepositInfo(currentAddr, 1).call().then(function(res) {
-        //                 depAmount = toBNB(res[0])
-        //                 startTime = res[1]
-        //                 readableTime = getTime(startTime)
-        //                 content += `<tr><td>${readableTime}</td><td>${depAmount} BNB</td></tr>`
-        //                 VaultsContract.methods.getUserDepositInfo(currentAddr, 2).call().then(function(res) {
-        //                     depAmount = toBNB(res[0])
-        //                     startTime = res[1]
-        //                     readableTime = getTime(startTime)
-        //                     content += `<tr><td>${readableTime}</td><td>${depAmount} BNB</td></tr>`
-        //                     $("#user-deposits").html(content)
-        //                 })
-        //             })
-        //         })
-        //     }
-        //     if (amount == 4) {
-        //         VaultsContract.methods.getUserDepositInfo(currentAddr, 0).call().then(function(res) {
-        //             let depAmount = toBNB(res[0])
-        //             let startTime = res[1]
-        //             let readableTime = getTime(startTime)
-        //             content += `<tr><td>${readableTime}</td><td>${depAmount} BNB</td></tr>`
-        //             VaultsContract.methods.getUserDepositInfo(currentAddr, 1).call().then(function(res) {
-        //                 depAmount = toBNB(res[0])
-        //                 startTime = res[1]
-        //                 readableTime = getTime(startTime)
-        //                 content += `<tr><td>${readableTime}</td><td>${depAmount} BNB</td></tr>`
-        //                 VaultsContract.methods.getUserDepositInfo(currentAddr, 2).call().then(function(res) {
-        //                     depAmount = toBNB(res[0])
-        //                     startTime = res[1]
-        //                     readableTime = getTime(startTime)
-        //                     content += `<tr><td>${readableTime}</td><td>${depAmount} BNB</td></tr>`
-        //                     VaultsContract.methods.getUserDepositInfo(currentAddr, 3).call().then(function(res) {
-        //                         depAmount = toBNB(res[0])
-        //                         startTime = res[1]
-        //                         readableTime = getTime(startTime)
-        //                         content += `<tr><td>${readableTime}</td><td>${depAmount} BNB</td></tr>`
-        //                         $("#user-deposits").html(content)
-        //                     })
-        //                 })
-        //             })
-        //         })
-        //     }
-        //     if (amount == 5) {
-        //         VaultsContract.methods.getUserDepositInfo(currentAddr, 0).call().then(function(res) {
-        //             let depAmount = toBNB(res[0])
-        //             let startTime = res[1]
-        //             let readableTime = getTime(startTime)
-        //             content += `<tr><td>${readableTime}</td><td>${depAmount} BNB</td></tr>`
-        //             VaultsContract.methods.getUserDepositInfo(currentAddr, 1).call().then(function(res) {
-        //                 depAmount = toBNB(res[0])
-        //                 startTime = res[1]
-        //                 readableTime = getTime(startTime)
-        //                 content += `<tr><td>${readableTime}</td><td>${depAmount} BNB</td></tr>`
-        //                 VaultsContract.methods.getUserDepositInfo(currentAddr, 2).call().then(function(res) {
-        //                     depAmount = toBNB(res[0])
-        //                     startTime = res[1]
-        //                     readableTime = getTime(startTime)
-        //                     content += `<tr><td>${readableTime}</td><td>${depAmount} BNB</td></tr>`
-        //                     VaultsContract.methods.getUserDepositInfo(currentAddr, 3).call().then(function(res) {
-        //                         depAmount = toBNB(res[0])
-        //                         startTime = res[1]
-        //                         readableTime = getTime(startTime)
-        //                         content += `<tr><td>${readableTime}</td><td>${depAmount} BNB</td></tr>`
-        //                         VaultsContract.methods.getUserDepositInfo(currentAddr, 4).call().then(function(res) {
-        //                             depAmount = toBNB(res[0])
-        //                             startTime = res[1]
-        //                             readableTime = getTime(startTime)
-        //                             content += `<tr><td>${readableTime}</td><td>${depAmount} BNB</td></tr>`
-        //                             $("#user-deposits").html(content)
-        //                         })
-        //                     })
-        //                 })
-        //             })
-        //         })
-        //     }
-        // })
     }, 2000)
 }
 
@@ -356,11 +178,11 @@ function append_html(html) {
 
 function invest(plan, qty) {
     console.log('ttttt', plan, qty);
-    qty = qty * 1e18;
-    if (qty < 0.05 * 1e18) {
+    qty = web3.utils.toWei(qty.toString(), 'ether');
+    if (qty < 20 * 1e18) {
         Swal.fire({
             icon: 'error',
-            text: 'Amount Must be greater than 0.05!',
+            text: 'Amount Must be greater than 20!',
         })
         return
     }
@@ -404,27 +226,19 @@ if (refurl) {
 }
 upline = localStorage.getItem('ref') ? localStorage.getItem('ref') : referrer
 $(function() {
-    // $("#invest-button").click(function() {
-    //     let qty = $("#invest-input1").val()
-    //     invest(qty * 1e18)
-    // })
     $("#wdbtn").click(function() {
-
-        let lwt;
         getUserLatestWithdrawal().then(result => {
-            lwt = result.latestWithdrawal;
+            let lwt = result.latestWithdrawal;
             var ltDate = new Date(0);
             ltDate.setUTCSeconds(lwt);
             ltDate.setDate(ltDate.getDate() + 1);
             var dateNow = new Date();
-            
-            if(dateNow.getTime() < ltDate.getTime()) {
+            if (dateNow.getTime() < ltDate.getTime()) {
                 var dateDiff = new Date(ltDate.getTime() - dateNow.getTime());
                 var hours = Math.floor((dateDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 var minutes = Math.floor((dateDiff % (1000 * 60 * 60)) / (1000 * 60));
                 var seconds = Math.floor((dateDiff % (1000 * 60)) / 1000);
                 var remainText = hours + "h " + minutes + "m " + seconds + "s ";
-
                 let withText = 'Next withdraw available in: \n' + remainText;
                 Swal.fire({
                     icon: 'info',
@@ -443,7 +257,6 @@ $(function() {
         })
     })
 })
-
 async function getUserLatestWithdrawal() {
     return await VaultsContract.methods.users(currentAddr).call()
 }
@@ -528,75 +341,36 @@ getRandomReferrer().then(function(randomReferrer) {
     console.log("new referrer:" + randomReferrer)
 })
 
-
-
-
 function get_profit(e, t) {
-
-    //console.log('contractPercent1',contractPercent1);
     var n = e;
     a = 0;
-    if (
-        (0 == t &&
-            ((a = (
-                    n *
-                    (contractPercent0 / 100) *
-                    14
-                ).toFixed(2)),
-                c.render(a, document.getElementById("plan0profit"))),
-
-            // 1 == t &&
-            // ((a = (
-            //   n *
-            //   (this.state.contractPercent1 / 100) *
-            //   21
-            // ).toFixed(2)),
-            //   c.render(a, document.getElementById("plan1profit"))),
-            // 2 == t &&
-            // ((a = (
-            //   n *
-            //   (this.state.contractPercent2 / 100) *
-            //   28
-            // ).toFixed(2)),
-            //   c.render(a, document.getElementById("plan2profit"))),
-            1 == t)
-    ) {
+    if ((0 == t && ((a = (n * (contractPercent0 / 100) * 14).toFixed(2)), c.render(a, document.getElementById("plan0profit"))), 1 == t)) {
         for (var s = 100, r = 0; r < 7; r++)
             s += s * (contractPercent1 / 100);
-        (a = ((n * (s - 100)) / 100).toFixed(2)),
-        //console.log('this will be profit i guess', a);
-        //   c.render(a, document.getElementById("plan1profit"));
-        $('#plan1profit').html(a);
+        (a = ((n * (s - 100)) / 100).toFixed(2)), $('#plan1profit').html(a);
     }
     if (2 == t) {
         for (var i = 100, l = 0; l < 14; l++)
             i += i * (contractPercent2 / 100);
-        (a = ((n * (i - 100)) / 100).toFixed(2)),
-        // c.render(a, document.getElementById("plan2profit"));
-        $('#plan2profit').html(a);
+        (a = ((n * (i - 100)) / 100).toFixed(2)), $('#plan2profit').html(a);
     }
     if (3 == t) {
         for (var o = 100, d = 0; d < 21; d++)
             o += o * (contractPercent3 / 100);
-        (a = ((n * (o - 100)) / 100).toFixed(2)),
-        // c.render(a, document.getElementById("plan3profit"));
-        $('#plan3profit').html(a);
+        (a = ((n * (o - 100)) / 100).toFixed(2)), $('#plan3profit').html(a);
     }
     if (0 == t) {
         for (var o = 100, d = 0; d < 14; d++)
             o += o * (contractPercent0 / 100);
-        (a = ((n * (o - 100)) / 100).toFixed(2)),
-        $('#plan0rofit').html(a);
+        (a = ((n * (o - 100)) / 100).toFixed(2)), $('#plan0rofit').html(a);
     }
 }
 
 function refresh_page(valu) {
     if (valu == 1) {
-
         window.location.reload();
     }
 }
-
 window.ethereum.on('accountsChanged', function(accounts) {
     window.location.reload();
 })
