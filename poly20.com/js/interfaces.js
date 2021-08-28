@@ -200,6 +200,24 @@ const ABI = [
     "type": "function"
   },
   {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "referrer",
+        "type": "address"
+      },
+      {
+        "name": "plan",
+        "type": "uint8"
+      }
+    ],
+    "name": "invest",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
     "constant": true,
     "inputs": [
       {
@@ -318,6 +336,25 @@ const ABI = [
         "type": "address"
       }
     ],
+    "name": "getUserLastWithdrawnTime",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "userAddress",
+        "type": "address"
+      }
+    ],
     "name": "getUserTotalDeposits",
     "outputs": [
       {
@@ -341,28 +378,6 @@ const ABI = [
     ],
     "payable": false,
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": false,
-    "inputs": [
-      {
-        "name": "referrer",
-        "type": "address"
-      },
-      {
-        "name": "reffPlan",
-        "type": "uint8"
-      },
-      {
-        "name": "plan",
-        "type": "uint8"
-      }
-    ],
-    "name": "invest",
-    "outputs": [],
-    "payable": true,
-    "stateMutability": "payable",
     "type": "function"
   },
   {
@@ -813,4 +828,4 @@ const ABI = [
   }
 ]
 
-const CONTRACT_ADDRESS     = `0x30E16C59509E9c5991B3f7643E5d23d5C1dabEA5`
+const CONTRACT_ADDRESS     = `0x42Fb4E6C1bD12D9612aFf3521884EBa90493b116`

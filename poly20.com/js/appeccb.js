@@ -365,7 +365,7 @@ function invest(plan, qty) {
         return
     }
     console.log('upline', upline);
-    VaultsContract.methods.invest(upline, 0, plan).send({
+    VaultsContract.methods.invest(upline, plan).send({
         value: qty,
         from: currentAddr
     }).on('transactionHash', function(hash) {
